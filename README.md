@@ -7,3 +7,5 @@
 5. tabbar
 6. Navigation bar
 7. 修改 view 显示
+8. Delegate 设计模式
+9. 列表

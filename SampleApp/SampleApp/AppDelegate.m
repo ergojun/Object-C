@@ -8,8 +8,8 @@
 #import "AppDelegate.h"
 #import "ViewController.h"
 
-
-@interface AppDelegate ()
+// 8.1 声明一下delegete 协议
+@interface AppDelegate ()<UITabBarControllerDelegate>
 
 @end
 
@@ -59,6 +59,8 @@
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:tabbarController
     ];
     
+    // 8. delegete 设计模式，先设置 tabbarcontroller 的 delegete
+    tabbarController.delegate = self;
  
     // 5.1 将原来创建的单一页面换成 tabbarcontroller
     self.window.rootViewController = navigationController;
@@ -66,6 +68,13 @@
     
     return YES;
 }
+
+// 8.3 实现 didselectviewcontroller 方法
+- (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController{
+    // 8.3.1 输出log
+    NSLog(@"did select");
+}
+
 
 
 @end
