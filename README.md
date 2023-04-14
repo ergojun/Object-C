@@ -15,11 +15,3 @@
 13. UIScrollView
 
 
-
-
-
-version1
-
-
-
-version2
