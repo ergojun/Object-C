@@ -7,6 +7,7 @@
 
 #import "AppDelegate.h"
 #import "ViewController.h"
+#import "GTVideoControllerViewController.h"
 
 @interface AppDelegate ()<UITabBarControllerDelegate>
 
@@ -30,9 +31,9 @@
     // 设置 tabbarItem 的名字
     viewController.tabBarItem.title = @"首页";
     
-    UIViewController *controller2 = [[UIViewController alloc] init];
-    controller2.view.backgroundColor = [UIColor grayColor];
-    controller2.tabBarItem.title = @"新闻";
+    // UICollectionView 的示例
+    GTVideoControllerViewController *videoController = [[GTVideoControllerViewController alloc] init];
+
     
     UIViewController *controller3 = [[UIViewController alloc] init];
     controller3.view.backgroundColor = [UIColor yellowColor];
@@ -43,7 +44,7 @@
     controller4.tabBarItem.title = @"我的";
     
     // 将 4 个 controller 视图加入 tabbarController 中,也可以控制页面顺序
-    [tabbarController setViewControllers:@[viewController,controller2,controller3,controller4]];
+    [tabbarController setViewControllers:@[viewController,videoController,controller3,controller4]];
     
     
     // 设置 tabbarController 的 delegate,需要在头部声明
