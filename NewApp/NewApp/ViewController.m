@@ -89,6 +89,22 @@
  
 }
 
+
+
+// 设置 cell 的高度
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(nonnull NSIndexPath *)indexPath{
+    return 100;
+}
+
+// 点击一行时触发的效果
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    NSLog(@"lalalall");
+    UIViewController *controller = [[UIViewController alloc] init];
+    controller.title = [NSString stringWithFormat:@"%@", @(indexPath.row)];
+    [self.navigationController pushViewController:controller animated:YES];
+}
+
 // 返回这个 tableview 有多少个 cell
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return 20;
@@ -97,9 +113,17 @@
 // 每个 cell 长什么样子
 // stye 有 4 种样式，Default、subtitle、value1、value2
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"id"];
+    
+    UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"id"];
+    if (!cell) {
+        // 如果没取到则新建一个cell
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"id"];
+    }
+    
+    // 打印位置
+    cell.textLabel.text = [NSString stringWithFormat:@"主标题 - %@", @(indexPath.row)];
     // 设置主标题，副标题
-    cell.textLabel.text = @"主标题";
+    // cell.textLabel.text = @"主标题";
     cell.detailTextLabel.text = @"副标题";
     return cell;
 }
