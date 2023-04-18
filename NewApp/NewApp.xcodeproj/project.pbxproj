@@ -7,16 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8A4F9C1029EC4FDB00C1DCD1 /* GTVideoControllerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A4F9C0F29EC4FDB00C1DCD1 /* GTVideoControllerViewController.m */; };
 		8A889B1D29D3ADDC003C571E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A889B1C29D3ADDC003C571E /* AppDelegate.m */; };
 		8A889B2329D3ADDC003C571E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A889B2229D3ADDC003C571E /* ViewController.m */; };
 		8A889B2629D3ADDC003C571E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A889B2429D3ADDC003C571E /* Main.storyboard */; };
 		8A889B2829D3ADDD003C571E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A889B2729D3ADDD003C571E /* Assets.xcassets */; };
 		8A889B2B29D3ADDD003C571E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A889B2929D3ADDD003C571E /* LaunchScreen.storyboard */; };
 		8A889B2E29D3ADDD003C571E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A889B2D29D3ADDD003C571E /* main.m */; };
-		8A889B3729D99E45003C571E /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A889B3629D99E45003C571E /* TableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8A4F9C0E29EC4FDB00C1DCD1 /* GTVideoControllerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTVideoControllerViewController.h; sourceTree = "<group>"; };
+		8A4F9C0F29EC4FDB00C1DCD1 /* GTVideoControllerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTVideoControllerViewController.m; sourceTree = "<group>"; };
 		8A889B1829D3ADDC003C571E /* NewApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A889B1B29D3ADDC003C571E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		8A889B1C29D3ADDC003C571E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -27,8 +29,6 @@
 		8A889B2A29D3ADDD003C571E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8A889B2C29D3ADDD003C571E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8A889B2D29D3ADDD003C571E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		8A889B3529D99E45003C571E /* TableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
-		8A889B3629D99E45003C571E /* TableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,8 +78,8 @@
 		8A889B3429D99DF0003C571E /* video */ = {
 			isa = PBXGroup;
 			children = (
-				8A889B3529D99E45003C571E /* TableViewController.h */,
-				8A889B3629D99E45003C571E /* TableViewController.m */,
+				8A4F9C0E29EC4FDB00C1DCD1 /* GTVideoControllerViewController.h */,
+				8A4F9C0F29EC4FDB00C1DCD1 /* GTVideoControllerViewController.m */,
 			);
 			path = video;
 			sourceTree = "<group>";
@@ -157,7 +157,7 @@
 				8A889B2329D3ADDC003C571E /* ViewController.m in Sources */,
 				8A889B1D29D3ADDC003C571E /* AppDelegate.m in Sources */,
 				8A889B2E29D3ADDD003C571E /* main.m in Sources */,
-				8A889B3729D99E45003C571E /* TableViewController.m in Sources */,
+				8A4F9C1029EC4FDB00C1DCD1 /* GTVideoControllerViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

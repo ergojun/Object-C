@@ -30,6 +30,12 @@
     // 创建 UICollectionView ,需要设置屏幕大小和 flowlayout
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
     
+    // 设置 flowLayout 的间隙大小
+    flowLayout.minimumLineSpacing = 10;
+    flowLayout.minimumInteritemSpacing = 10;
+    flowLayout.itemSize = CGSizeMake((self.view.frame.size.width - 10)/2, 300);
+    
+    
     UICollectionView *collectionView = [[UICollectionView alloc] initWithFrame:self.view.bounds collectionViewLayout:flowLayout];
     
     
@@ -47,7 +53,8 @@
 
 
 #pragma mark - UICollectionView
- 
+
+
 // 设置 cell 的个数，默认大小是 50*50
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
     return 20;
@@ -61,6 +68,14 @@
     return cell;
 }
 
-
+// 根据 indexPath 区分每个 cell
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
+    
+    if (indexPath.item % 3 ==0) {
+        return  CGSizeMake(self.view.frame.size.width, 100);
+    }else{
+        return CGSizeMake((self.view.frame.size.width - 10)/2, 300);
+    }
+}
 
 @end
