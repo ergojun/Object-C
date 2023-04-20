@@ -38,14 +38,12 @@
     
     UICollectionView *collectionView = [[UICollectionView alloc] initWithFrame:self.view.bounds collectionViewLayout:flowLayout];
     
-    
-    // 设置 cell 的样式，先注册
-    [collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"UICollectionViewCell"];
-    
     // 设置 delegate 和 datasource,需要在上面 interface 声明
     collectionView.delegate = self;
     collectionView.dataSource = self;
     
+    // 设置 cell 的样式，先注册
+    [collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"UICollectionViewCell"];
     
     // 复制到屏幕上
     [self.view addSubview:collectionView];
