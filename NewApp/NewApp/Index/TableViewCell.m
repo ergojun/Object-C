@@ -15,8 +15,11 @@
 @property(nonatomic, strong, readwrite) UILabel *commendLabel;
 @property(nonatomic, strong, readwrite) UILabel *timeLabel;
 
+// 创建图片
 @property(nonatomic, strong, readwrite) UIImageView *rightimageView;
 
+// 创建按钮
+@property(nonatomic, strong, readwrite) UIButton *deleteButton;
 
 @end
 
@@ -59,11 +62,25 @@
                     self.timeLabel;
         })];
         
-        
+        // 图片视图
         [self.contentView addSubview:({
             self.rightimageView = [[UIImageView  alloc] initWithFrame:CGRectMake(300, 15, 70, 70)];
             self.rightimageView.backgroundColor = [UIColor greenColor];
             self.rightimageView;
+            
+        })];
+        
+        // 按钮视图
+        [self.contentView addSubview:({
+            self.deleteButton = [[UIButton alloc] initWithFrame:CGRectMake(270, 80, 20, 20)];
+            // 设置文字
+            [self.deleteButton setTitle:@"X" forState:UIControlStateNormal];
+            // 设置长按后的样式
+            [self.deleteButton setTitle:@"V" forState:UIControlStateHighlighted];
+            // 设置点击后触发的事件，调用 deldeteButtonClick 函数
+            [self.deleteButton addTarget:self action:@selector(deleteButtonClick) forControlEvents:UIControlEventTouchUpInside];
+            self.deleteButton.backgroundColor = [UIColor blueColor];
+            self.deleteButton;
             
         })];
 
@@ -88,7 +105,12 @@
     self.timeLabel.frame = CGRectMake(self.commendLabel.frame.origin.x + self.commendLabel.frame.size.width + 15, self.commendLabel.frame.origin.y, self.timeLabel.frame.size.width, self.timeLabel.frame.size.height);
     
     self.rightimageView.image = [UIImage imageNamed:@"Assets/nav_index.png"];
+    
 
+}
+
+- (void)deleteButtonClick{
+    NSLog(@"按钮被点击");
 }
 
 @end
