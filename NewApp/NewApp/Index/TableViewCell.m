@@ -15,6 +15,8 @@
 @property(nonatomic, strong, readwrite) UILabel *commendLabel;
 @property(nonatomic, strong, readwrite) UILabel *timeLabel;
 
+@property(nonatomic, strong, readwrite) UIImageView *rightimageView;
+
 
 @end
 
@@ -56,6 +58,14 @@
                     self.timeLabel.textColor = [UIColor grayColor];
                     self.timeLabel;
         })];
+        
+        
+        [self.contentView addSubview:({
+            self.rightimageView = [[UIImageView  alloc] initWithFrame:CGRectMake(300, 15, 70, 70)];
+            self.rightimageView.backgroundColor = [UIColor greenColor];
+            self.rightimageView;
+            
+        })];
 
     }
     return self;
@@ -76,6 +86,9 @@
     self.timeLabel.text = @"3秒前";
     [self.timeLabel sizeToFit];
     self.timeLabel.frame = CGRectMake(self.commendLabel.frame.origin.x + self.commendLabel.frame.size.width + 15, self.commendLabel.frame.origin.y, self.timeLabel.frame.size.width, self.timeLabel.frame.size.height);
+    
+    self.rightimageView.image = [UIImage imageNamed:@"Assets/nav_index.png"];
+
 }
 
 @end
