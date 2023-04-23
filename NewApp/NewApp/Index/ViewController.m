@@ -7,7 +7,7 @@
 
 #import "ViewController.h"
 #import "TableViewCell.h"
-
+#import "GTWebViewController.h"
 
 
 @interface ViewController ()<UITableViewDataSource,UITableViewDelegate>
@@ -51,7 +51,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
     NSLog(@"lalalall");
-    UIViewController *controller = [[UIViewController alloc] init];
+    GTWebViewController *controller = [[GTWebViewController alloc] init];
     controller.title = [NSString stringWithFormat:@"%@", @(indexPath.row)];
     [self.navigationController pushViewController:controller animated:YES];
 }
