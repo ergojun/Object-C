@@ -7,7 +7,8 @@
 
 #import "GTRecommendViewController.h"
 
-@interface GTRecommendViewController ()<UIScrollViewDelegate>
+// 加上 delegate 的声明
+@interface GTRecommendViewController ()<UIScrollViewDelegate,UIGestureRecognizerDelegate>
 
 @end
 
@@ -46,6 +47,20 @@
         [scrollView addSubview:({
             // 生成 view
             UIView *view = [[UIView alloc] initWithFrame:CGRectMake(scrollView.bounds.size.width * i, 0, scrollView.bounds.size.width, scrollView.bounds.size.height)];
+            
+            // 创建一小块屏幕
+            [view addSubview:({
+                UIView *view = [[UIView alloc] initWithFrame:CGRectMake(300, 200, 50, 50)];
+                view.backgroundColor = [UIColor yellowColor];
+                // 设置手势监听 self 指当前类
+                UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(viewClick)];
+                // 将这个手势识别加入 view 中
+                [view addGestureRecognizer:tapGesture];
+                // 设置这个手势监听的 delegate
+                tapGesture.delegate = self;
+                view;
+            })];
+            
             view.backgroundColor = [colorArray objectAtIndex:i];
             view;
         })];
@@ -78,5 +93,16 @@
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
     // 停止减速
     NSLog(@"停止减速");
+}
+
+// 小屏幕点击事件触发的函数
+- (void)viewClick{
+    NSLog(@"小屏幕被点击");
+}
+
+// 手势监听 delegate 示例
+- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer{
+    // NO 是监听不生效
+    return YES;
 }
 @end
